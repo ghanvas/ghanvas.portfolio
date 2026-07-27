@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ghanva Sarfraz — Professional Resume Writer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1c3050;
+    --navy-dark:#132340;
+    --gray-700:#3f4652;
+    --gray-500:#6b7280;
+    --line:#e2e5ea;
+    --bg-alt:#f6f7f9;
+    --white:#ffffff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:'Inter',sans-serif;
+    color:var(--gray-700);
+    background:var(--white);
+    line-height:1.6;
+  }
+  h1,h2,h3,h4{
+    font-family:'Source Serif 4',serif;
+    color:var(--navy-dark);
+    font-weight:600;
+    line-height:1.2;
+    margin-top:10px;
+  }
+  a{color:inherit;}
+  .wrap{max-width:980px;margin:0 auto;padding:0 28px;}
+  :focus-visible{outline:2px solid var(--navy);outline-offset:2px;}
+  @media (prefers-reduced-motion: reduce){*{transition:none !important;}}
+
+  /* NAV */
+  header{border-bottom:1px solid var(--line);}
+  nav{
+    max-width:980px;margin:0 auto;padding:20px 28px;
+    display:flex;justify-content:space-between;align-items:center;
+  }
+  .brand{font-family:'Source Serif 4',serif;font-size:1.15rem;font-weight:600;color:var(--navy-dark);}
+  .nav-links{display:flex;gap:28px;list-style:none;font-size:0.92rem;}
+  .nav-links a{text-decoration:none;}
+  .nav-links a:hover{color:var(--navy);text-decoration:underline;}
+  .nav-cta{
+    background:var(--navy);color:#fff;padding:9px 18px;border-radius:3px;
+    text-decoration:none;font-size:0.88rem;font-weight:500;
+  }
+  .nav-cta:hover{background:var(--navy-dark);}
+  @media (max-width:760px){.nav-links{display:none;}}
+
+  /* HERO — plain, literal, no graphic */
+  .hero{padding:64px 0 48px;border-bottom:1px solid var(--line);}
+  .hero .role{font-size:0.95rem;color:var(--navy);font-weight:600;text-transform:uppercase;letter-spacing:0.04em;margin-bottom:12px;}
+  .hero h1{font-size:clamp(1.8rem,3.2vw,2.5rem);margin-bottom:16px;max-width:20ch;}
+  .hero p.lead{max-width:62ch;font-size:1.02rem;color:var(--gray-700);margin-bottom:28px;}
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;}
+  .btn-primary{
+    background:var(--navy);color:#fff;padding:12px 24px;border-radius:3px;
+    text-decoration:none;font-size:0.92rem;font-weight:500;display:inline-block;
+  }
+  .btn-primary:hover{background:var(--navy-dark);}
+  .btn-secondary{
+    border:1px solid var(--navy);color:var(--navy);padding:11px 23px;border-radius:3px;
+    text-decoration:none;font-size:0.92rem;font-weight:500;display:inline-block;
+  }
+  .btn-secondary:hover{background:var(--bg-alt);}
+
+  /* STATS */
+  .stats{background:var(--bg-alt);border-bottom:1px solid var(--line);}
+  .stats-inner{
+    max-width:980px;margin:0 auto;padding:32px 28px;
+    display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center;
+  }
+  .stat b{display:block;font-family:'Source Serif 4',serif;font-size:1.7rem;color:var(--navy-dark);}
+  .stat span{font-size:0.8rem;color:var(--gray-500);}
+  @media (max-width:640px){.stats-inner{grid-template-columns:repeat(2,1fr);}}
+
+  /* SECTIONS */
+  section{padding:64px 0;border-bottom:1px solid var(--line);}
+  section:last-of-type{border-bottom:none;}
+  .section-title{font-size:1.55rem;margin-top:12px;margin-bottom:8px;}
+  .section-sub{color:var(--gray-500);font-size:0.95rem;margin-bottom:32px;max-width:60ch;}
+
+  /* SERVICES — plain list, not cards */
+  .service-list{display:grid;grid-template-columns:1fr 1fr;gap:32px 40px;}
+  .service h3{font-size:1.1rem;margin-bottom:8px;}
+  .service p{font-size:0.93rem;color:var(--gray-700);margin-bottom:10px;}
+  .service ul{list-style:disc;padding-left:20px;font-size:0.88rem;color:var(--gray-500);}
+  .service li{margin-bottom:4px;}
+  @media (max-width:700px){.service-list{grid-template-columns:1fr;}}
+
+  /* PROCESS — simple numbered list */
+  .process-item{display:flex;gap:18px;padding:18px 0;border-top:1px solid var(--line);}
+  .process-item:last-child{border-bottom:1px solid var(--line);}
+  .process-item .n{font-family:'Source Serif 4',serif;font-weight:600;color:var(--navy);font-size:1.1rem;width:28px;flex-shrink:0;}
+  .process-item h4{font-size:1rem;color:var(--navy-dark);margin-bottom:4px;}
+  .process-item p{font-size:0.92rem;color:var(--gray-500);}
+
+  /* SAMPLES */
+  .sample-note{font-size:0.85rem;color:var(--gray-500);font-style:italic;margin-bottom:20px;}
+  .compare{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);border-radius:4px;overflow:hidden;}
+  .compare > div{padding:22px 24px;}
+  .compare .before{background:var(--bg-alt);border-right:1px solid var(--line);}
+  .compare h5{font-size:0.78rem;text-transform:uppercase;letter-spacing:0.04em;color:var(--gray-500);margin-bottom:10px;}
+  .compare .after h5{color:var(--navy);}
+  .compare p{font-size:0.94rem;}
+  @media (max-width:700px){.compare{grid-template-columns:1fr;}.compare .before{border-right:none;border-bottom:1px solid var(--line);}}
+
+  /* TESTIMONIALS */
+  .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .testi{border:1px solid var(--line);border-radius:4px;padding:22px 20px;background:var(--bg-alt);}
+  .testi p.quote{font-size:0.94rem;margin-bottom:14px;color:var(--gray-700);}
+  .testi .who{font-size:0.82rem;color:var(--gray-500);font-weight:500;}
+  @media (max-width:760px){.testi-grid{grid-template-columns:1fr;}}
+
+  /* ABOUT — text only, no photo block emphasis */
+  .about p{margin-bottom:14px;font-size:0.98rem;max-width:70ch;}
+  .credentials{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px;}
+  .credentials span{
+    font-size:0.8rem;border:1px solid var(--line);padding:6px 12px;border-radius:3px;color:var(--navy-dark);background:var(--bg-alt);
+  }
+
+  /* CONTACT — plain, no dark background */
+  .contact-box{
+    background:var(--bg-alt);border:1px solid var(--line);border-radius:4px;
+    padding:40px 32px;text-align:center;
+  }
+  .contact-box h2{font-size:1.6rem;margin-bottom:10px;}
+  .contact-box p{color:var(--gray-500);margin-bottom:22px;}
+
+  footer{padding:28px;text-align:center;font-size:0.82rem;color:var(--gray-500);}
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="brand">Ghanva Sarfraz</div>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#samples">Samples</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+    <a class="nav-cta" href="mailto:hireproservice2018@gmail.com" target="_blank" rel="noopener">Contact</a>
+  </nav>
+</header>
+
+<section class="hero wrap" style="border-bottom:none;">
+  <div class="role">Professional Resume Writer</div>
+  <h1>ATS-Optimized Resumes, Cover Letters & LinkedIn Profiles</h1>
+  <p class="lead">I write resumes, cover letters, and LinkedIn profiles that pass Applicant Tracking Systems and get results — with 6+ years of experience writing for professionals across the US, UK, Europe, Asia, and Canada.</p>
+  <div class="hero-ctas">
+    <a class="btn-primary" href="#contact">Get started</a>
+    <a class="btn-secondary" href="#samples">View a sample</a>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="stats-inner">
+    <div class="stat"><b>6+</b><span>Years of experience</span></div>
+    <div class="stat"><b>3000+</b><span>Documents written</span></div>
+    <div class="stat"><b>40+</b><span>Industries served</span></div>
+    <div class="stat"><b>92%</b><span>ATS pass rate*</span></div>
+  </div>
+</div>
+
+<section id="services" class="wrap">
+  <h2 class="section-title">Services</h2>
+  <p class="section-sub">Resume writing, cover letters, LinkedIn optimization, and career coaching.</p>
+  <div class="service-list">
+    <div class="service">
+      <h3>Resume Writing</h3>
+      <p>ATS-compliant resumes built around the keywords your target roles are actually screened for.</p>
+      <ul>
+        <li>ATS-compliant formatting</li>
+        <li>Keyword optimization from real job postings</li>
+        <li>Quantified, achievement-based bullet points</li>
+      </ul>
+    </div>
+    <div class="service">
+      <h3>Cover Letters</h3>
+      <p>A clear, tailored letter that supports your resume and speaks directly to the role.</p>
+      <ul>
+        <li>Role-specific customization</li>
+        <li>Professional tone matched to industry</li>
+        <li>Concise, one-page format</li>
+      </ul>
+    </div>
+    <div class="service">
+      <h3>LinkedIn Profile Optimization</h3>
+      <p>A profile optimized for LinkedIn's search algorithm and recruiter searches.</p>
+      <ul>
+        <li>SEO-optimized headline and About section</li>
+        <li>Keyword strategy for recruiter search</li>
+        <li>Experience section aligned with your resume</li>
+      </ul>
+    </div>
+    <div class="service">
+      <h3>Career Coaching</h3>
+      <p>A one-on-one session to align your skills and experience with the right job roles.</p>
+      <ul>
+        <li>Skills and experience assessment</li>
+        <li>Job role alignment</li>
+        <li>Job search strategy guidance</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="process" class="wrap">
+  <h2 class="section-title">How I Work</h2>
+  <p class="section-sub">A straightforward, four-step process for every project.</p>
+  <div class="process">
+    <div class="process-item">
+      <div class="n">1</div>
+      <div><h4>Consultation</h4><p>We discuss your background, career goals, and target roles.</p></div>
+    </div>
+    <div class="process-item">
+      <div class="n">2</div>
+      <div><h4>Research & Keyword Analysis</h4><p>I review job postings in your target field to identify the keywords and requirements ATS systems screen for.</p></div>
+    </div>
+    <div class="process-item">
+      <div class="n">3</div>
+      <div><h4>Drafting</h4><p>I write your resume, cover letter, and/or LinkedIn profile using the information gathered.</p></div>
+    </div>
+    <div class="process-item">
+      <div class="n">4</div>
+      <div><h4>Revisions & Delivery</h4><p>You review the draft, I make revisions, and you receive the final documents in editable formats.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="samples" class="wrap">
+  <h2 class="section-title">Sample Work</h2>
+  <p class="section-sub">A sample bullet point rewrite, shown for format reference.</p>
+  <p class="sample-note">Sample content shown below — replace with a real, anonymized client example.</p>
+  <div class="compare">
+    <div class="before">
+      <h5>Before</h5>
+      <p>"Responsible for managing a team and making sure store operations ran smoothly on a daily basis."</p>
+    </div>
+    <div class="after">
+      <h5>After</h5>
+      <p>"Led a 14-person team and reduced operational downtime by 23% through process improvements."</p>
+    </div>
+  </div>
+</section>
+
+<section id="testimonials" class="wrap">
+  <h2 class="section-title">Testimonials</h2>
+  <p class="section-sub">Sample testimonials shown below — replace with real client quotes once available.</p>
+  <div class="testi-grid">
+    <div class="testi">
+      <p class="quote">"After the rewrite, I started getting interview requests within two weeks."</p>
+      <div class="who">— Client, Operations</div>
+    </div>
+    <div class="testi">
+      <p class="quote">"The cover letter clearly explained my career change to employers."</p>
+      <div class="who">— Client, Supply Chain</div>
+    </div>
+    <div class="testi">
+      <p class="quote">"My LinkedIn profile started appearing in recruiter searches within a week."</p>
+      <div class="who">— Client, UX Research</div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="wrap about">
+  <h2 class="section-title">About</h2>
+  <p>I am a dedicated professional with 6+ years of successful writing experience in resume development across a wide range of industries and professional positions.</p>
+  <p>I am skilled at applying modern, effective writing practices to professional documents and possess in-depth knowledge of professional writing standards across the US, UK, Europe, Asia, and Canada.</p>
+  <p>I have helped clients pass ATS screening by revamping their resumes to meet current standards, improving their interview opportunities and job search outcomes. I also provide personalized career coaching, analyzing each client's expertise and aligning it with relevant job roles.</p>
+  <div class="credentials">
+    <span>6+ years experience</span>
+    <span>ATS formatting specialist</span>
+    <span>US · UK · EU · Asia · Canada formats</span>
+    <span>Career coaching</span>
+  </div>
+</section>
+
+<section id="contact" class="wrap" style="border-bottom:none;">
+  <div class="contact-box">
+    <h2>Get In Touch</h2>
+    <p>Contact me to discuss your resume, cover letter, or LinkedIn profile.</p>
+    <a class="btn-primary" href="mailto:hireproservice2018@gmail.com" target="_blank" rel="noopener">hireproservice2018@gmail.com</a>
+  </div>
+</section>
+
+<footer>
+  © 2026 Ghanva Sarfraz — Professional Resume Writer
+</footer>
+
+</body>
+</html>
